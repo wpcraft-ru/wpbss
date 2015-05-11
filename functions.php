@@ -143,3 +143,8 @@ require get_template_directory() . '/inc/navwalker.php';
  * Load Bootstrap compatibility file.
  */
 require get_template_directory() . '/inc/bootstrap-load.php';
+
+/**
+ * Load Systemo files.
+ */
+require get_template_directory() . '/inc/systemo/load.php';
