@@ -8,6 +8,44 @@
  */
 
 /**
+ * Add block for header if no widgets 1
+ */
+function wpbss_header_widgets_1_callback(){
+    if ( get_theme_mod('logo')) : ?>
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+            <img src="<?php echo get_theme_mod('logo'); ?>"  class="img-responsive" alt="" />
+        </a> 
+    <?php else: // End header image check. ?>
+       <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+       <strong class="site-description"><?php bloginfo( 'description' ); ?></strong>
+    <?php endif; // End header image check.
+}
+add_action( 'wpbss-header-widgets-1', 'wpbss_header_widgets_1_callback' );
+
+
+/**
+ * Add Footer Menu
+ */
+function wpbss_footer_widgets_1_callback(){
+
+        $arg=array(
+            'theme_location'    => 'footer',
+            'depth'             => 0,
+            'container'         => 'div',
+            'container_class'   => 'collapse navbar-collapse',
+            'menu_class'        => 'nav nav-pills',
+            'echo'            => false,
+            'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+            'walker'            => new wp_bootstrap_navwalker()
+        );
+    
+        if( has_nav_menu("footer")) echo wp_nav_menu( $arg);
+}
+add_action( 'wpbss-footer-widgets-1', 'wpbss_footer_widgets_1_callback' );
+
+
+
+/**
  * Adds custom classes to the array of body classes.
  *
  * @param array $classes Classes for the body element.

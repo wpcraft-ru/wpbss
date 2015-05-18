@@ -5,7 +5,15 @@
  */
 
 ( function( $ ) {
-		//цвет акцента
+	
+    //Основной цвет элементов
+	wp.customize( 'default_color', function( value ) {
+		value.bind( function( to ) {
+			$( '.btn-default' ).css( 'background-color', to );
+		});
+	});
+    
+    //цвет акцента
 	wp.customize( 'true_akcent_color', function( value ) {
 		value.bind( function( to ) {
 			$( '.akcent' ).css( 'background-color', to );

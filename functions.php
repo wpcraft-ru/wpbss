@@ -50,7 +50,8 @@ function maremo_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', 'maremo' ),
+		'primary' => __( 'Primary Menu', 'wpbss' ),
+		'footer' => __( 'Footer Menu', 'wpbss' ),
 	) );
 
 	/*
@@ -100,6 +101,7 @@ add_action( 'widgets_init', 'maremo_widgets_init' );
  * Enqueue scripts and styles.
  */
 function maremo_scripts() {
+	wp_enqueue_style( 'wpbss-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'maremo-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
@@ -130,21 +132,21 @@ require get_template_directory() . '/inc/extras.php';
 /**
  * Customizer additions.
  */
-require get_template_directory() . '/inc/customizer.php';
+require get_template_directory() . '/inc/customizer/customizer.php';
 
 /**
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
 
-require get_template_directory() . '/inc/navwalker.php';
 
 /**
  * Load Bootstrap compatibility file.
  */
 require get_template_directory() . '/inc/bootstrap-load.php';
+require get_template_directory() . '/inc/wp-bootstrap-navwalker/wp_bootstrap_navwalker.php';
 
 /**
- * Load Systemo files.
+ * Load other files.
  */
-require get_template_directory() . '/inc/systemo/load.php';
+require get_template_directory() . '/inc/register_sidebar.php';
