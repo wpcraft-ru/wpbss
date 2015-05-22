@@ -259,7 +259,7 @@ function true_customizer_css() {
                color: <?php echo  get_theme_mod( 'default_color_text' ) ?>; 
             }
            
-           #site-navigation a{
+           #site-navigation a, #colophon a, #colophon {
                color: <?php echo  get_theme_mod( 'default_color_text' ) ?>; 
             }
            

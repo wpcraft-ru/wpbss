@@ -46,6 +46,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
 13.0 Header
 14.0 page-template-page-no-title.php
+15.0 Footer
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
@@ -910,7 +911,6 @@ Margin for header and content
   color: #fff;
 }
 
-
 /*--------------------------------------------------------------
 14.0 page-template-page-no-title.php
 --------------------------------------------------------------*/
@@ -921,4 +921,13 @@ margin-top: 0px;
 
 .page-template-page-no-title .hentry {
   margin: 0;
+}
+
+
+/*--------------------------------------------------------------
+15.0 Footer
+--------------------------------------------------------------*/
+
+#colophon {
+  padding: 10px 0;
 }
