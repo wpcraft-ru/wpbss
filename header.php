@@ -76,4 +76,4 @@
         </nav>
         </div><!-- #site-navigation -->
 
-    <div id="content" class="site-content container row">
+    <div id="content" class="site-content container">
