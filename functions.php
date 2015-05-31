@@ -150,3 +150,9 @@ require get_template_directory() . '/inc/wp-bootstrap-navwalker/wp_bootstrap_nav
  * Load other files.
  */
 require get_template_directory() . '/inc/register_sidebar.php';
+
+
+/**
+ * Support IE
+ */
+require get_template_directory() . '/inc/ie-support.php';
