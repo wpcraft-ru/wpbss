@@ -1,9 +1,9 @@
 /*
-Theme Name: Maremo
+Theme Name: WPBSS
 Theme URI: http://systemo.biz/
 Author: Systemo.biz
 Author URI: http://systemo.biz/
-Description: Description
+Description: WordPress theme = Underscores (_s) + Bootstrap
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -883,7 +883,7 @@ Margin for header and content
   padding: 15px 0px;
 }
 
-#site-navigation .navbar {
+.page-template-page-no-title #site-navigation .navbar {
   margin-bottom: 0px;
 }
 
