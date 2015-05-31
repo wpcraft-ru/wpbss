@@ -1,2 +1,2 @@
 # wpbss
-WordPress Boutstrap by Systemo
+WordPress theme based _s & Bootstrap by Systemo
