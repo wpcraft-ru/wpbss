@@ -7,6 +7,23 @@
  * @package Maremo
  */
 
+
+
+/*
+Добавлем кнопку Подробнее на странице списка постов
+*/
+function add_button_more_s( $more_link, $more_link_text ) {
+	global $post;
+	return '<br/><a href="' . get_permalink() . '#more-' . get_the_id() . '" class="btn btn-default">Подробнее &rarr;</a>';
+}
+add_filter( 'the_content_more_link', 'add_button_more_s', 10, 2 );
+
+function excerpt_more_callback($more){
+	global $post;
+	return '<br/><a href="' . get_permalink() . '#more-' . get_the_id() . '" class="btn btn-default">Подробнее &rarr;</a>';
+}
+add_filter('excerpt_more', 'excerpt_more_callback');
+
 /**
  * Add block for header if no widgets 1
  */

@@ -18,10 +18,11 @@
 	<div class="entry-content">
 		<?php
 			/* translators: %s: Name of current post */
-			the_content( sprintf(
-				__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'maremo' ),
-				the_title( '<span class="screen-reader-text">"', '"</span>', false )
-			) );
+            if(is_single()) {
+                the_content();
+            } else {
+                the_excerpt();
+            }
 		?>
 
 		<?php

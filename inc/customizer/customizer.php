@@ -240,9 +240,10 @@ function wpbss_sanitize_text_option( $value ) {
 	return strip_tags( stripslashes( $value ) );
 }
 
-function true_customizer_css() {
+function customizer_css_wpbss() {
     ?>
 	   <style id="customize_wpbss">
+           /*Commone styles*/
            body { 
                color: <?php echo get_theme_mod( 'text_color' ) ?>; 
            }
@@ -254,24 +255,48 @@ function true_customizer_css() {
                color: <?php echo get_theme_mod( 'link_color_on_hover' ) ?>; 
            }
            
-           .btn-default, .navbar-default {
-               background-color: <?php echo  get_theme_mod( 'default_color' ) ?>; 
-               color: <?php echo  get_theme_mod( 'default_color_text' ) ?>; 
-            }
-           
-           #site-navigation a, #colophon a, #colophon {
-               color: <?php echo  get_theme_mod( 'default_color_text' ) ?>; 
-            }
-           
-            .site-footer {
-                background-color: <?php echo  get_theme_mod( 'default_color' ) ?>; 
-           }
-           
+
+          
            .btn-default:hover, .btn-default:focus, .btn-default.focus, .btn-default:active, .btn-default.active, .open>.dropdown-toggle.btn-default {
                background-color: <?php echo  get_theme_mod( 'default_color_on_hover' ) ?>; 
               color: <?php echo  get_theme_mod( 'default_color_text' ) ?>; 
             }
+
+           /*
+           Default color elements and text color for element
+           */
+          .btn-default,
+           .navbar-default,
+           #site-navigation .dropdown-menu
+           {
+               background-color: <?php echo  get_theme_mod( 'default_color' ) ?>; 
+               color: <?php echo  get_theme_mod( 'default_color_text' ) ?>; 
+            }
+           
+           .navbar-default .navbar-nav>.open>a,
+           .navbar-default .navbar-nav>.open>a:hover,
+           .navbar-default .navbar-nav>.open>a:focus
+           {
+                background-color: <?php echo  get_theme_mod( 'default_color' ) ?>; 
+                color: <?php echo  get_theme_mod( 'default_color_text' ) ?>; 
+           }
+           
+           /*
+           Header and main menu
+           */
+           #site-navigation a, #colophon a, #colophon {
+               color: <?php echo  get_theme_mod( 'default_color_text' ) ?>; 
+            }
+           
+           /*
+           Footer and bottom menu
+           */
+            .site-footer {
+                background-color: <?php echo  get_theme_mod( 'default_color' ) ?>; 
+           }
+           
+
 	   </style>
     <?php
 }
-add_action( 'wp_head', 'true_customizer_css' ); // вешаем на wp_head
+add_action( 'wp_head', 'customizer_css_wpbss' ); // вешаем на wp_head
