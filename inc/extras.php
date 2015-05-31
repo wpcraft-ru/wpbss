@@ -7,7 +7,18 @@
  * @package Maremo
  */
 
-
+/**
+ * Change for `the_archive_title()`.
+ *
+ * Display the archive title based on the queried object.
+ */
+function get_the_archive_title_callback_wpbss($title) {
+	if ( is_post_type_archive() ) {
+		return post_type_archive_title( '', false );
+    }
+return $title;
+}
+add_filter('get_the_archive_title', 'get_the_archive_title_callback_wpbss');
 
 /*
 Добавлем кнопку Подробнее на странице списка постов
