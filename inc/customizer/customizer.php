@@ -9,7 +9,7 @@
  * Set default theme options
  */
 function wpbss_activationfunction($oldname, $oldtheme=false) {
-    set_theme_mod('default_color', '#fff');
+    set_theme_mod('default_color', '#f8f8f8');
     set_theme_mod('default_color_on_hover', '#e7e7e7');
     set_theme_mod('default_color_text', '#000');
 }
