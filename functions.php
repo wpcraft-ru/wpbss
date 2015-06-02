@@ -41,6 +41,15 @@ function maremo_setup() {
 	 */
 	add_theme_support( 'title-tag' );
 
+/**
+ * Support WooCommerce
+ * 
+ */
+function woocommerce_support() {
+    add_theme_support( 'woocommerce' );
+}
+add_action( 'after_setup_theme', 'woocommerce_support' );
+    
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *
@@ -156,3 +165,4 @@ require get_template_directory() . '/inc/register_sidebar.php';
  * Support IE
  */
 require get_template_directory() . '/inc/ie-support.php';
+
