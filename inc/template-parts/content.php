@@ -15,7 +15,8 @@
 
 	<div class="entry-content">
 		<?php
-            if ( is_single() or empty(get_the_excerpt())) {
+            $excerpt = get_the_excerpt();
+            if ( is_single() or empty($excerpt)) {
                 /* translators: %s: Name of current post */
                 the_content( sprintf(
                     wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'wpbss' ), array( 'span' => array( 'class' => array() ) ) ),
