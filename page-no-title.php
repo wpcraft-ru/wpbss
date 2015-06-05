@@ -3,7 +3,7 @@
 Template Name: Page. No title
 
  *
- * @package Maremo
+ * @package wpbss
  */
 
 get_header(); ?>
@@ -19,7 +19,7 @@ get_header(); ?>
                         <?php the_content(); ?>
                         <?php
                             wp_link_pages( array(
-                                'before' => '<div class="page-links">' . __( 'Pages:', 'maremo' ),
+                                'before' => '<div class="page-links">' . __( 'Pages:', 'wpbss' ),
                                 'after'  => '</div>',
                             ) );
                         ?>

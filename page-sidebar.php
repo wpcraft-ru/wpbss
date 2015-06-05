@@ -7,7 +7,7 @@ Template Name: Page + Sidebar
  * and that other 'pages' on your WordPress site will use a
  * different template.
  *
- * @package Maremo
+ * @package wpbss
  */
 
 get_header(); ?>
@@ -17,7 +17,7 @@ get_header(); ?>
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php get_template_part( 'content', 'page' ); ?>
+				<?php get_template_part( 'inc/template-parts/content', 'page' ); ?>
 
 				<?php
 					// If comments are open or we have at least one comment, load up the comment template

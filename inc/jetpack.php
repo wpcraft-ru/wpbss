@@ -1,19 +1,30 @@
 <?php
 /**
  * Jetpack Compatibility File
- * See: http://jetpack.me/
+ * See: https://jetpack.me/
  *
- * @package Maremo
+ * @package wpbss
  */
 
 /**
  * Add theme support for Infinite Scroll.
- * See: http://jetpack.me/support/infinite-scroll/
+ * See: https://jetpack.me/support/infinite-scroll/
  */
-function maremo_jetpack_setup() {
+function wpbss_jetpack_setup() {
 	add_theme_support( 'infinite-scroll', array(
 		'container' => 'main',
+		'render'    => 'wpbss_infinite_scroll_render',
 		'footer'    => 'page',
 	) );
-}
-add_action( 'after_setup_theme', 'maremo_jetpack_setup' );
+} // end function wpbss_jetpack_setup
+add_action( 'after_setup_theme', 'wpbss_jetpack_setup' );
+
+/**
+ * Custom render function for Infinite Scroll.
+ */
+function wpbss_infinite_scroll_render() {
+	while ( have_posts() ) {
+		the_post();
+		get_template_part( 'template-parts/content', get_post_format() );
+	}
+} // end function wpbss_infinite_scroll_render

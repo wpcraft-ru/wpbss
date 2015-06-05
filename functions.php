@@ -1,18 +1,11 @@
 <?php
 /**
- * Maremo functions and definitions
+ * wpbss functions and definitions
  *
- * @package Maremo
+ * @package wpbss
  */
 
-/**
- * Set the content width based on the theme's design and stylesheet.
- */
-if ( ! isset( $content_width ) ) {
-	$content_width = 640; /* pixels */
-}
-
-if ( ! function_exists( 'maremo_setup' ) ) :
+if ( ! function_exists( 'wpbss_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -20,15 +13,14 @@ if ( ! function_exists( 'maremo_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function maremo_setup() {
-
+function wpbss_setup() {
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on Maremo, use a find and replace
-	 * to change 'maremo' to the name of your theme in all the template files
+	 * If you're building a theme based on wpbss, use a find and replace
+	 * to change 'wpbss' to the name of your theme in all the template files
 	 */
-	load_theme_textdomain( 'maremo', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'wpbss', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -41,34 +33,29 @@ function maremo_setup() {
 	 */
 	add_theme_support( 'title-tag' );
 
-/**
- * Support WooCommerce
- * 
- */
-function woocommerce_support() {
-    add_theme_support( 'woocommerce' );
-}
-add_action( 'after_setup_theme', 'woocommerce_support' );
-    
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
-	//add_theme_support( 'post-thumbnails' );
+	add_theme_support( 'post-thumbnails' );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'wpbss' ),
 		'footer' => __( 'Footer Menu', 'wpbss' ),
 	) );
-
+    
 	/*
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
 	 */
 	add_theme_support( 'html5', array(
-		'search-form', 'comment-form', 'comment-list', 'gallery', 'caption',
+		'search-form',
+		'comment-form',
+		'comment-list',
+		'gallery',
+		'caption',
 	) );
 
 	/*
@@ -76,52 +63,69 @@ add_action( 'after_setup_theme', 'woocommerce_support' );
 	 * See http://codex.wordpress.org/Post_Formats
 	 */
 	add_theme_support( 'post-formats', array(
-		'aside', 'image', 'video', 'quote', 'link',
+		'aside',
+		'image',
+		'video',
+		'quote',
+		'link',
 	) );
 
 	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'maremo_custom_background_args', array(
+	add_theme_support( 'custom-background', apply_filters( 'wpbss_custom_background_args', array(
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
+    
+    
+    /**
+    * Support WooCommerce 
+    */
+    add_theme_support( 'woocommerce' );
 }
-endif; // maremo_setup
-add_action( 'after_setup_theme', 'maremo_setup' );
+endif; // wpbss_setup
+add_action( 'after_setup_theme', 'wpbss_setup' );
+
+/**
+ * Set the content width in pixels, based on the theme's design and stylesheet.
+ *
+ * Priority 0 to make it available to lower priority callbacks.
+ *
+ * @global int $content_width
+ */
+function wpbss_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'wpbss_content_width', 640 );
+}
+add_action( 'after_setup_theme', 'wpbss_content_width', 0 );
 
 /**
  * Register widget area.
  *
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
-function maremo_widgets_init() {
+function wpbss_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'maremo' ),
+		'name'          => esc_html__( 'Sidebar', 'wpbss' ),
 		'id'            => 'sidebar-1',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
 	) );
 }
-add_action( 'widgets_init', 'maremo_widgets_init' );
+add_action( 'widgets_init', 'wpbss_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
-function maremo_scripts() {
+function wpbss_scripts() {
 	wp_enqueue_style( 'wpbss-style', get_stylesheet_uri() );
-
-	wp_enqueue_script( 'maremo-navigation', get_template_directory_uri() . '/inc/js/navigation.js', array(), '20120206', true );
-
-	wp_enqueue_script( 'maremo-skip-link-focus-fix', get_template_directory_uri() . '/inc/js/skip-link-focus-fix.js', array(), '20130115', true );
-
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'maremo_scripts' );
+add_action( 'wp_enqueue_scripts', 'wpbss_scripts' );
 
 /**
  * Implement the Custom Header feature.

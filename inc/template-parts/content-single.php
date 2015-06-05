@@ -1,7 +1,10 @@
 <?php
 /**
- * @package Maremo
+ * Template part for displaying single posts.
+ *
+ * @package wpbss
  */
+
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -13,16 +16,17 @@
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'maremo' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'wpbss' ),
 				'after'  => '</div>',
 			) );
 		?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php maremo_entry_footer(); ?>
-		<div class="entry-meta">
-			<?php maremo_posted_on(); ?>
+		<?php wpbss_entry_footer(); ?>
+        <div class="entry-meta">
+			<?php wpbss_posted_on(); ?>
 		</div><!-- .entry-meta -->
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
+
