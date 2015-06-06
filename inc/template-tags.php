@@ -7,6 +7,7 @@
  * @package wpbss
  */
 
+
 if ( ! function_exists( 'the_posts_navigation' ) ) :
 /**
  * Display navigation to next/previous set of posts when applicable.
@@ -82,15 +83,9 @@ function wpbss_posted_on() {
 		esc_html( get_the_modified_date() )
 	);
 
-	$posted_on = sprintf(
-		esc_html_x( 'Posted on %s', 'post date', 'wpbss' ),
-		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
-	);
+	$posted_on = '<span class="glyphicon glyphicon-calendar"></span> <a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>';
 
-	$byline = sprintf(
-		esc_html_x( 'by %s', 'post author', 'wpbss' ),
-		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
-	);
+	$byline = '<span class="glyphicon glyphicon-user"></span> <span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>';
 
 	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
 
@@ -107,23 +102,23 @@ function wpbss_entry_footer() {
 		/* translators: used between list items, there is a space after the comma */
 		$categories_list = get_the_category_list( esc_html__( ', ', 'wpbss' ) );
 		if ( $categories_list && wpbss_categorized_blog() ) {
-			printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'wpbss' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+			echo( '<span class="cat-links"><span class="glyphicon glyphicon-folder-open"></span> ' . $categories_list . '</span>' ); // WPCS: XSS OK.
 		}
 
 		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'wpbss' ) );
 		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'wpbss' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+			echo( '<span class="tags-links"><span class="glyphicon glyphicon-tag"></span> ' . $tags_list . '</span>' ); // WPCS: XSS OK.
 		}
 	}
 
 	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-		echo '<span class="comments-link">';
+		echo '<span class="comments-link"><span class="glyphicon glyphicon-comment"></span> ';
 		comments_popup_link( esc_html__( 'Leave a comment', 'wpbss' ), esc_html__( '1 Comment', 'wpbss' ), esc_html__( '% Comments', 'wpbss' ) );
 		echo '</span>';
 	}
 
-	edit_post_link( esc_html__( 'Edit', 'wpbss' ), '<span class="edit-link">', '</span>' );
+	edit_post_link( esc_html__( 'Edit', 'wpbss' ), '<span class="edit-link"><span class="glyphicon glyphicon-edit"></span> ', '</span>' );
 }
 endif;
 

@@ -8,7 +8,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2015-06-06 02:21+0500\n"
+"PO-Revision-Date: 2015-06-06 18:22+0500\n"
 "Last-Translator: Anatoly <a.yumashev@gmail.com>\n"
 "Language-Team: \n"
 "X-Generator: Poedit 1.8\n"
@@ -157,7 +157,7 @@ msgstr "Рубрики: %1$s"
 
 #: inc/template-tags.php:116
 msgid "Tagged %1$s"
-msgstr ""
+msgstr "Метки: %1$s"
 
 #: inc/template-tags.php:122
 msgid "Leave a comment"

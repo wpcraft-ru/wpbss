@@ -89,11 +89,11 @@ add_filter('get_the_archive_title', 'get_the_archive_title_callback_wpbss');
 /*
 Добавлем кнопку Подробнее на странице списка постов
 */
-function add_button_more_s( $more_link, $more_link_text ) {
+function the_content_more_link_callback( $more_link, $more_link_text ) {
 	global $post;
 	return '<br/><a href="' . get_permalink() . '#more-' . get_the_id() . '" class="btn btn-default">Подробнее &rarr;</a>';
 }
-add_filter( 'the_content_more_link', 'add_button_more_s', 10, 2 );
+add_filter( 'the_content_more_link', 'the_content_more_link_callback', 10, 2 );
 
 function excerpt_more_callback($more){
 	global $post;
@@ -128,10 +128,13 @@ add_action( 'wpbss-header-widgets-1', 'wpbss_header_widgets_1_callback' );
 function wpbss_footer_widgets_1_callback(){
 ?>
     <nav id="footer-navigation" class="main-navigation" role="navigation">
-        <?php wp_nav_menu( array( 'theme_location' => 'footer', 'menu_id' => 'footer-menu' ) ); ?>
+        <?php 
+           if(has_nav_menu("footer")) {
+               wp_nav_menu( array( 'theme_location' => 'footer', 'menu_id' => 'footer-menu' ) ); 
+           }
+        ?>
     </nav>
 <?php
       
 }
 add_action( 'wpbss-footer-widgets-1', 'wpbss_footer_widgets_1_callback' );
-
