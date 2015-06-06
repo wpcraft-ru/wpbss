@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: _s 1.0.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2015-06-06 19:33+0500\n"
+"POT-Creation-Date: 2015-06-06 21:26+0500\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -41,19 +41,19 @@ msgstr ""
 msgid "Comments"
 msgstr ""
 
-#: comments.php:34 comments.php:55
+#: comments.php:34 comments.php:52
 msgid "Comment navigation"
 msgstr ""
 
-#: comments.php:37 comments.php:58
+#: comments.php:37 comments.php:55
 msgid "Older Comments"
 msgstr ""
 
-#: comments.php:38 comments.php:59
+#: comments.php:38 comments.php:56
 msgid "Newer Comments"
 msgstr ""
 
-#: comments.php:71
+#: comments.php:68
 msgid "Comments are closed."
 msgstr ""
 
@@ -71,6 +71,15 @@ msgstr ""
 
 #: header.php:56
 msgid "Toggle navigation"
+msgstr ""
+
+#: inc/comments-wpbss.php:24 inc/template-parts/content-page.php:26
+#: inc/template-tags.php:121
+msgid "Edit"
+msgstr ""
+
+#: inc/comments-wpbss.php:30
+msgid "Your comment is awaiting moderation."
 msgstr ""
 
 #: inc/extras.php:52
@@ -139,10 +148,6 @@ msgstr ""
 #: inc/template-parts/content-single.php:20 inc/template-parts/content.php:31
 #: page-no-title.php:22
 msgid "Pages:"
-msgstr ""
-
-#: inc/template-parts/content-page.php:26 inc/template-tags.php:121
-msgid "Edit"
 msgstr ""
 
 #: inc/template-parts/content.php:21
@@ -231,4 +236,12 @@ msgstr ""
 #: search.php:16
 #, php-format
 msgid "Search Results for: %s"
+msgstr ""
+
+#: searchform.php:8
+msgid "Text for search..."
+msgstr ""
+
+#: searchform.php:10
+msgid "Find"
 msgstr ""

@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: _s 1.0.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2015-06-06 19:33+0500\n"
-"PO-Revision-Date: 2015-06-06 19:37+0500\n"
+"POT-Creation-Date: 2015-06-06 21:26+0500\n"
+"PO-Revision-Date: 2015-06-06 21:26+0500\n"
 "Last-Translator: Anatoly <a.yumashev@gmail.com>\n"
 "Language-Team: \n"
 "Language: ru_RU\n"
@@ -40,19 +40,19 @@ msgstr "Попробуйте посмотреть все записи за ме�
 msgid "Comments"
 msgstr "Комментарии"
 
-#: comments.php:34 comments.php:55
+#: comments.php:34 comments.php:52
 msgid "Comment navigation"
 msgstr "Навигация по комментариям"
 
-#: comments.php:37 comments.php:58
+#: comments.php:37 comments.php:55
 msgid "Older Comments"
 msgstr "Предыдущие комментарии"
 
-#: comments.php:38 comments.php:59
+#: comments.php:38 comments.php:56
 msgid "Newer Comments"
 msgstr "Следующие комментарии"
 
-#: comments.php:71
+#: comments.php:68
 msgid "Comments are closed."
 msgstr "Комментарии закрыты."
 
@@ -71,6 +71,15 @@ msgstr "Сайдбар"
 #: header.php:56
 msgid "Toggle navigation"
 msgstr "Переключить навигацию"
+
+#: inc/comments-wpbss.php:24 inc/template-parts/content-page.php:26
+#: inc/template-tags.php:121
+msgid "Edit"
+msgstr "Изменить"
+
+#: inc/comments-wpbss.php:30
+msgid "Your comment is awaiting moderation."
+msgstr "Ваш комментарий ожидает модерации."
 
 #: inc/extras.php:52
 #, php-format
@@ -147,10 +156,6 @@ msgstr "Мы не можем найти &rsquo;то, что вы ищете. В�
 #: page-no-title.php:22
 msgid "Pages:"
 msgstr "Страницы:"
-
-#: inc/template-parts/content-page.php:26 inc/template-tags.php:121
-msgid "Edit"
-msgstr "Изменить"
 
 #: inc/template-parts/content.php:21
 #, php-format
@@ -239,6 +244,14 @@ msgstr "Архив"
 #, php-format
 msgid "Search Results for: %s"
 msgstr "Результаты поиска для: %s"
+
+#: searchform.php:8
+msgid "Text for search..."
+msgstr "Текст для поиска …"
+
+#: searchform.php:10
+msgid "Find"
+msgstr "Найти"
 
 #~ msgctxt "post date"
 #~ msgid "Posted on %s"
