@@ -170,3 +170,8 @@ require get_template_directory() . '/inc/register_sidebar.php';
  */
 require get_template_directory() . '/inc/ie-support.php';
 
+
+/**
+ * Customize comments
+ */
+require get_template_directory() . '/inc/comments-wpbss.php';

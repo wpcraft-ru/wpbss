@@ -744,6 +744,14 @@ a:active {
 	margin: 0 0 1.5em;
 }
 
+.cat-links {
+  margin-right: 5px;
+}
+
+.edit-link {
+  margin: 5px;
+}
+
 .tags-links {
   margin: 5px;
 }
@@ -769,6 +777,18 @@ a:active {
 
 .bypostauthor {
 	display: block;
+}
+
+#comments article {
+  margin: 10px;
+}
+
+.comment .avatar {
+  margin-right: 10px;
+}
+
+.comment-meta-item {
+  margin: 3px;
 }
 
 /*--------------------------------------------------------------

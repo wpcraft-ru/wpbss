@@ -25,7 +25,7 @@ if ( post_password_required() ) {
 	<?php if ( have_comments() ) : ?>
 		<h1 class="comments-title">
 			<?php
-				echo(__( 'Comments', 'wpbss') . ': ' . get_comments_number() );
+				echo(__( 'Comments', 'wpbss') . ' <span class="glyphicon glyphicon-comment"></span> ' . get_comments_number() );
 			?>
 		</h1>
 
@@ -41,14 +41,11 @@ if ( post_password_required() ) {
 		</nav><!-- #comment-nav-above -->
 		<?php endif; // Check for comment navigation. ?>
 
-		<ol class="comment-list">
+		<ul class="comment-list media-list">
 			<?php
-				wp_list_comments( array(
-					'style'      => 'ol',
-					'short_ping' => true,
-				) );
+				wp_list_comments( 'style=ul&short_ping=true&callback=wpbss_bootstrap_comments');
 			?>
-		</ol><!-- .comment-list -->
+		</ul><!-- .comment-list -->
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
 		<nav id="comment-nav-below" class="navigation comment-navigation" role="navigation">
