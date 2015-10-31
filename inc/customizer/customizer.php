@@ -5,6 +5,12 @@
  * @package Maremo
  */
 
+
+include_once 'customizer-logo.php';
+include_once 'customizer-contacts.php';
+
+
+
 /**
  * Set default theme options
  */
@@ -13,7 +19,7 @@ function wpbss_activationfunction($oldname, $oldtheme=false) {
     set_theme_mod('default_color_on_hover', '#e7e7e7');
     set_theme_mod('default_color_text', '#000');
 }
-add_action("after_switch_theme", "wpbss_activationfunction", 10 ,  2);  
+add_action("after_switch_theme", "wpbss_activationfunction", 10 ,  2);
 
 /**
  * Add section for default color
@@ -21,17 +27,17 @@ add_action("after_switch_theme", "wpbss_activationfunction", 10 ,  2);
  */
 
 function wpbss_customize_default_color_section($wp_customize){
-    
+
 
     //###########################################################
-    //Add option "Default color"    
+    //Add option "Default color"
     $wp_customize->add_setting(
 		'default_color',
 		array(
 			'default'     => '#fff', // по умолчанию - белый
 		)
 	);
-    
+
     $wp_customize->add_control(
    		new WP_Customize_Color_Control(
             $wp_customize,
@@ -43,16 +49,16 @@ function wpbss_customize_default_color_section($wp_customize){
             )
         )
     );
-    
+
     //###########################################################
-    //Add option "Default color on hover"    
+    //Add option "Default color on hover"
     $wp_customize->add_setting(
 		'default_color_on_hover',
 		array(
 			'default'     => '#e7e7e7', // по умолчанию - белый
 		)
 	);
-    
+
     $wp_customize->add_control(
    		new WP_Customize_Color_Control(
             $wp_customize,
@@ -64,16 +70,16 @@ function wpbss_customize_default_color_section($wp_customize){
             )
         )
     );
-    
+
     //###########################################################
-    //Add option "Default color text for element"    
+    //Add option "Default color text for element"
     $wp_customize->add_setting(
 		'default_color_text',
 		array(
 			'default'     => '#000', // по умолчанию - черный
 		)
 	);
-    
+
     $wp_customize->add_control(
    		new WP_Customize_Color_Control(
             $wp_customize,
@@ -85,9 +91,9 @@ function wpbss_customize_default_color_section($wp_customize){
             )
         )
     );
-    
+
     //###########################################################
-    //Add option "Link color"    
+    //Add option "Link color"
 	$wp_customize->add_setting(
 		'link_color', // id
 		array(
@@ -107,7 +113,7 @@ function wpbss_customize_default_color_section($wp_customize){
 	);
 
     //###########################################################
-    //Add option "Link color on hover"    
+    //Add option "Link color on hover"
 	$wp_customize->add_setting(
 		'link_color_on_hover', // id
 		array(
@@ -125,9 +131,9 @@ function wpbss_customize_default_color_section($wp_customize){
 			)
 		)
 	);
-    
+
     //###########################################################
-    //Add option "Link color on hover"    
+    //Add option "Link color on hover"
 	$wp_customize->add_setting(
             'text_color', // id
             array(
@@ -145,7 +151,7 @@ function wpbss_customize_default_color_section($wp_customize){
 			)
 		)
 	);
-    
+
     //###########################################################
     //Add section
     $wp_customize->add_section(
@@ -162,75 +168,6 @@ add_action( 'customize_register', 'wpbss_customize_default_color_section' );
 
 
 
-/**
- * Add general data for site
- *
- * @param WP_Customize_Manager $wp_customize Theme Customizer object.
- */
-function wpbss_customize_data( $wp_customize ) {
-
-	$wp_customize->add_section(
-            'site_data',
-            array(
-                'title'     => 'Основные данные',
-                'priority'  => 200,
-                'description' => 'Настройте основные данные сайта'
-            )
-       );
-			
-    $wp_customize->add_setting(
-            'phone_header',
-            array(
-                'default'            => '+7 (800) 000 00-00',
-                'sanitize_callback'  => 'wpbss_sanitize_text_option',
-            )
-    );
-        $wp_customize->add_control(
-				'phone_header',
-				array(
-					'section'  => 'site_data',
-					'label'    => 'Телефон',
-					'type'     => 'text'
-				)
-			);
-
-			$wp_customize->add_setting(
-				'email_header',
-				array(
-					'default'            => 'admin@example.com',
-					'sanitize_callback'  => 'wpbss_sanitize_text_option',
-				)
-			);
-			$wp_customize->add_control(
-				'email_header',
-				array(
-					'section'  => 'site_data',
-					'label'    => 'Email',
-					'type'     => 'text'
-				)
-			);
-
-			// изображение в заголовке
-			$wp_customize->add_setting(
-				'logo',
-				array(
-					'default'      => '', // по умолчанию - изображение не установлено
-					'transport'    => 'refresh'
-				)
-			);
-			$wp_customize->add_control(
-				new WP_Customize_Image_Control(
-					$wp_customize,
-					'logo_control',
-					array(
-						'label'    => 'Логотип',
-						'settings' => 'logo',
-						'section'  => 'site_data'
-					)
-				)
-			);
-}
-add_action( 'customize_register', 'wpbss_customize_data' );
 
 
 /**
@@ -244,22 +181,22 @@ function customizer_css_wpbss() {
     ?>
 	   <style id="customize_wpbss">
            /*Commone styles*/
-           body { 
-               color: <?php echo get_theme_mod( 'text_color' ) ?>; 
+           body {
+               color: <?php echo get_theme_mod( 'text_color' ) ?>;
            }
-	       
-           a { 
-               color: <?php echo get_theme_mod( 'link_color' ) ?>; 
-           }
-           a:hover { 
-               color: <?php echo get_theme_mod( 'link_color_on_hover' ) ?>; 
-           }
-           
 
-          
+           a {
+               color: <?php echo get_theme_mod( 'link_color' ) ?>;
+           }
+           a:hover {
+               color: <?php echo get_theme_mod( 'link_color_on_hover' ) ?>;
+           }
+
+
+
            .btn-default:hover, .btn-default:focus, .btn-default.focus, .btn-default:active, .btn-default.active, .open>.dropdown-toggle.btn-default {
-               background-color: <?php echo  get_theme_mod( 'default_color_on_hover' ) ?>; 
-              color: <?php echo  get_theme_mod( 'default_color_text' ) ?>; 
+               background-color: <?php echo  get_theme_mod( 'default_color_on_hover' ) ?>;
+              color: <?php echo  get_theme_mod( 'default_color_text' ) ?>;
             }
 
            /*
@@ -269,32 +206,32 @@ function customizer_css_wpbss() {
            .navbar-default,
            #site-navigation .dropdown-menu
            {
-               background-color: <?php echo  get_theme_mod( 'default_color' ) ?>; 
-               color: <?php echo  get_theme_mod( 'default_color_text' ) ?>; 
+               background-color: <?php echo  get_theme_mod( 'default_color' ) ?>;
+               color: <?php echo  get_theme_mod( 'default_color_text' ) ?>;
             }
-           
+
            .navbar-default .navbar-nav>.open>a,
            .navbar-default .navbar-nav>.open>a:hover,
            .navbar-default .navbar-nav>.open>a:focus
            {
-                background-color: <?php echo  get_theme_mod( 'default_color' ) ?>; 
-                color: <?php echo  get_theme_mod( 'default_color_text' ) ?>; 
+                background-color: <?php echo  get_theme_mod( 'default_color' ) ?>;
+                color: <?php echo  get_theme_mod( 'default_color_text' ) ?>;
            }
-           
+
            /*
            Header and main menu
            */
            #site-navigation a, #colophon a, #colophon {
-               color: <?php echo  get_theme_mod( 'default_color_text' ) ?>; 
+               color: <?php echo  get_theme_mod( 'default_color_text' ) ?>;
             }
-           
+
            /*
            Footer and bottom menu
            */
             .site-footer {
-                background-color: <?php echo  get_theme_mod( 'default_color' ) ?>; 
+                background-color: <?php echo  get_theme_mod( 'default_color' ) ?>;
            }
-           
+
 
 	   </style>
     <?php
