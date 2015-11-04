@@ -1,5 +1,5 @@
 /*
-Theme Name: wpbss
+Theme Name: wpbss2
 Theme URI: http://underscores.me/
 Author: Systemo
 Author URI: http://systemo.biz/
@@ -8,9 +8,9 @@ License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: wpbss
 Tags: light, white, gray, one-column, two-columns, right-sidebar, fluid-layout, responsive-layout, responsive-layout, translation-ready, custom-colors, custom-menu, featured-images, full-width-template, post-formats, theme-options, threaded-comments
-GitHub Theme URI: https://github.com/systemo-biz/wpbss/
+GitHub Theme URI: https://github.com/systemo-biz/wpbss2/
 GitHub Branch: master
-Version: 20151030-1
+Version: 20151031-1
 */
 
 
@@ -758,6 +758,13 @@ a:active {
 /*--------------------------------------------------------------
 10.3 Comments
 --------------------------------------------------------------*/
+
+.comment-list {
+    margin-left: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
 .comment-content a {
 	word-wrap: break-word;
 }
@@ -770,13 +777,19 @@ a:active {
   margin: 10px;
 }
 
-.comment .avatar {
-  margin-right: 10px;
-}
-
 .comment-meta-item {
   margin: 3px;
 }
+
+
+.comment-data-hide-hover {
+    visibility: hidden;
+}
+
+.comment-list article:hover .comment-data-hide-hover {
+    visibility: visible;
+}
+
 
 /*--------------------------------------------------------------
 11.0 Infinite scroll
@@ -933,9 +946,6 @@ margin-top: 0px;
 15.0 Footer
 --------------------------------------------------------------*/
 
-#colophon {
-  padding: 10px 0;
-}
 
 #footer-menu a {
   padding: 5px;

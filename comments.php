@@ -41,7 +41,7 @@ if ( post_password_required() ) {
 		</nav><!-- #comment-nav-above -->
 		<?php endif; // Check for comment navigation. ?>
 
-		<ul class="comment-list media-list">
+		<ul class="comment-list">
 			<?php
 				wp_list_comments( 'style=ul&short_ping=true&callback=wpbss_bootstrap_comments');
 			?>

@@ -8,6 +8,8 @@
 
 include_once 'customizer-logo.php';
 include_once 'customizer-contacts.php';
+include_once 'customizer-css.php';
+include_once 'customizer-footer.php';
 
 
 
@@ -195,7 +197,7 @@ function customizer_css_wpbss() {
 
 
            .btn-default:hover, .btn-default:focus, .btn-default.focus, .btn-default:active, .btn-default.active, .open>.dropdown-toggle.btn-default {
-               background-color: <?php echo  get_theme_mod( 'default_color_on_hover' ) ?>;
+              background-color: <?php echo  get_theme_mod( 'default_color_on_hover' ) ?>;
               color: <?php echo  get_theme_mod( 'default_color_text' ) ?>;
             }
 
@@ -221,18 +223,13 @@ function customizer_css_wpbss() {
            /*
            Header and main menu
            */
-           #site-navigation a, #colophon a, #colophon {
+           #site-navigation a {
                color: <?php echo  get_theme_mod( 'default_color_text' ) ?>;
             }
 
-           /*
-           Footer and bottom menu
-           */
-            .site-footer {
-                background-color: <?php echo  get_theme_mod( 'default_color' ) ?>;
-           }
 
 
+           <?php do_action( 'add_style_options' ); ?>
 	   </style>
     <?php
 }

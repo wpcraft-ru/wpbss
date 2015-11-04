@@ -11,24 +11,9 @@
 	</div><!-- #content .container -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info container">
-            <div class="row">
-                <div id="footer-widgets-1" class="col-md-6">
-                    <?php 
-                        if ( ! dynamic_sidebar( 'footer-widgets-1' ) ) :
-                            do_action( 'wpbss-footer-widgets-1' );
-                        endif; // end sidebar widget area
-                    ?>
-                </div>
-                <div id="footer-widgets-2" class="col-md-6">
-                    <?php 
-                        if ( ! dynamic_sidebar( 'footer-widgets-2' ) ) :
-                            do_action( 'wpbss-footer-widgets-2' );
-                        endif; // end sidebar widget area
-                    ?>        
-                </div>
-            </div><!-- .row -->
-		</div><!-- .site-info -->
+
+    <?php do_action( 'footer_section_add'); ?>
+
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

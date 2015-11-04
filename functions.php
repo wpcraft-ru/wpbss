@@ -5,6 +5,8 @@
  * @package wpbss
  */
 
+
+
 if ( ! function_exists( 'wpbss_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -45,7 +47,7 @@ function wpbss_setup() {
 		'primary' => __( 'Primary Menu', 'wpbss' ),
 		'footer' => __( 'Footer Menu', 'wpbss' ),
 	) );
-    
+
 	/*
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
@@ -75,10 +77,10 @@ function wpbss_setup() {
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
-    
-    
+
+
     /**
-    * Support WooCommerce 
+    * Support WooCommerce
     */
     add_theme_support( 'woocommerce' );
 }
@@ -105,7 +107,7 @@ add_action( 'after_setup_theme', 'wpbss_content_width', 0 );
 function wpbss_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Sidebar', 'wpbss' ),
-		'id'            => 'sidebar-1',
+		'id'            => 'alfa-sidebar-1',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -127,51 +129,54 @@ function wpbss_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'wpbss_scripts' );
 
-/**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
-
-/**
- * Custom template tags for this theme.
- */
-require get_template_directory() . '/inc/template-tags.php';
-
-/**
- * Custom functions that act independently of the theme templates.
- */
-require get_template_directory() . '/inc/extras.php';
-
-/**
- * Customizer additions.
- */
-require get_template_directory() . '/inc/customizer/customizer.php';
-
-/**
- * Load Jetpack compatibility file.
- */
-require get_template_directory() . '/inc/jetpack.php';
 
 
-/**
- * Load Bootstrap compatibility file.
- */
-require get_template_directory() . '/inc/bootstrap-load.php';
-require get_template_directory() . '/inc/wp-bootstrap-navwalker/wp_bootstrap_navwalker.php';
+ /**
+  * Implement the Custom Header feature.
+  */
+ require get_template_directory() . '/inc/header/custom-header.php';
+ require get_template_directory() . '/inc/header/menu-fullwidth.php';
 
-/**
- * Load other files.
- */
-require get_template_directory() . '/inc/register_sidebar.php';
+ /**
+  * Custom template tags for this theme.
+  */
+ require get_template_directory() . '/inc/template-tags.php';
+
+ /**
+  * Custom functions that act independently of the theme templates.
+  */
+ require get_template_directory() . '/inc/extras.php';
+
+ /**
+  * Customizer additions.
+  */
+ require get_template_directory() . '/inc/customizer/customizer.php';
+
+ /**
+  * Load Jetpack compatibility file.
+  */
+ require get_template_directory() . '/inc/jetpack.php';
 
 
-/**
- * Support IE
- */
-require get_template_directory() . '/inc/ie-support.php';
+ /**
+  * Load Bootstrap compatibility file.
+  */
+ require get_template_directory() . '/inc/bootstrap-load.php';
+ require get_template_directory() . '/inc/wp-bootstrap-navwalker/wp_bootstrap_navwalker.php';
+
+ /**
+  * Load other files.
+  */
+ require get_template_directory() . '/inc/header/register_sidebar.php';
 
 
-/**
- * Customize comments
- */
-require get_template_directory() . '/inc/comments-wpbss.php';
+ /**
+  * Support IE
+  */
+ require get_template_directory() . '/inc/ie-support.php';
+
+
+ /**
+  * Customize comments
+  */
+ require get_template_directory() . '/inc/comments-wpbss.php';
