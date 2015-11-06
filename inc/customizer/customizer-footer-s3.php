@@ -2,10 +2,11 @@
 
 class footer_section_3_class {
   function __construct() {
-    add_action( 'add_style_options', array($this, 'wpbss_print_style'));
     add_action( 'customize_register', array($this, 'wpbss_customizer'));
+    add_action( 'add_style_options', array($this, 'wpbss_print_style'));
     add_action( 'footer_section_add', array($this,'footer_add_section'));
 
+    wp_register_theme_activation_hook('wpbss', 'set_default_mod');
 
 
 		/*###############################
@@ -29,6 +30,14 @@ class footer_section_3_class {
 		));
   }
 
+  //Запускаем установку параметров темы по умолчанию при активации темы
+  function set_default_mod() {
+
+    //проверяем есть ли настройка и если нет то назначаем
+    if(! get_theme_mod( 'footer_section_3_enable' )){
+      set_theme_mod( 'footer_section_3_enable', true);
+    }
+  }
 
   //Add CSS option on customizer
   function wpbss_customizer($wp_customize){
