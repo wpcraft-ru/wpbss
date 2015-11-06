@@ -1,12 +1,10 @@
 <?php
 
-
-
 class footer_section_1_class {
   function __construct() {
+    add_action( 'customize_register', array($this, 'wpbss_customizer'));
     add_action( 'footer_section_add', array($this,'footer_add_section_1'));
     add_action( 'add_style_options', array($this, 'wpbss_print_style'));
-    add_action( 'customize_register', array($this, 'wpbss_customizer'));
 
     register_sidebar(array(
     	'name' => __('Footer S1'),

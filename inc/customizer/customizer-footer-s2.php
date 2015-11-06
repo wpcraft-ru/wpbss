@@ -1,7 +1,5 @@
 <?php
 
-
-
 class footer_section_2_class {
   function __construct() {
     add_action( 'customize_register', array($this, 'wpbss_customizer'));
