@@ -175,3 +175,4 @@ add_action( 'wp_enqueue_scripts', 'wpbss_scripts' );
   */
  require get_template_directory() . '/inc/header/index.php';
  require get_template_directory() . '/inc/footer/index.php';
+ require get_template_directory() . '/inc/styles/index.php';
