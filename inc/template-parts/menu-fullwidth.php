@@ -3,7 +3,7 @@
     <nav class="navbar navbar-default" role="navigation">
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-main-menu">
                     <span class="sr-only"><?php esc_html_e( 'Toggle navigation', 'wpbss' ); ?></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -16,7 +16,7 @@
                     'theme_location'    => 'primary',
                     'depth'             => 2,
                     'container'         => 'div',
-                    'container_class'   => 'collapse navbar-collapse',
+                    'container_class'   => 'collapse navbar-collapse navbar-collapse-main-menu navbar-static-top',
                     'menu_class'        => 'nav navbar-nav',
                     'echo'            => true,
                     'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',

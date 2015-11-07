@@ -9,7 +9,6 @@
 include_once 'customizer-logo.php';
 include_once 'customizer-contacts.php';
 include_once 'customizer-css.php';
-include_once 'customizer-footer.php';
 
 
 
@@ -181,7 +180,7 @@ function wpbss_sanitize_text_option( $value ) {
 
 function customizer_css_wpbss() {
     ?>
-	   <style id="customize_wpbss">
+	   <style type="text/css" id="customize_wpbss">
            /*Commone styles*/
            body {
                color: <?php echo get_theme_mod( 'text_color' ) ?>;
@@ -212,9 +211,9 @@ function customizer_css_wpbss() {
                color: <?php echo  get_theme_mod( 'default_color_text' ) ?>;
             }
 
-           .navbar-default .navbar-nav>.open>a,
-           .navbar-default .navbar-nav>.open>a:hover,
-           .navbar-default .navbar-nav>.open>a:focus
+           #site-navigation .navbar-default .navbar-nav>.open>a,
+           #site-navigation .navbar-default .navbar-nav>.open>a:hover,
+          #site-navigation .navbar-default .navbar-nav>.open>a:focus
            {
                 background-color: <?php echo  get_theme_mod( 'default_color' ) ?>;
                 color: <?php echo  get_theme_mod( 'default_color_text' ) ?>;
@@ -227,7 +226,13 @@ function customizer_css_wpbss() {
                color: <?php echo  get_theme_mod( 'default_color_text' ) ?>;
             }
 
+            #site-navigation .navbar-default .navbar-toggle .icon-bar {
+                background-color: <?php echo  get_theme_mod( 'default_color_text' ) ?>;
+            }
 
+            #site-navigation .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+                background-color: <?php echo  get_theme_mod( 'default_color' ) ?>;
+            }
 
            <?php do_action( 'add_style_options' ); ?>
 	   </style>

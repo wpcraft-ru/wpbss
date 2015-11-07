@@ -6,6 +6,9 @@ class footer_section_3_class {
     add_action( 'add_style_options', array($this, 'wpbss_print_style'));
     add_action( 'footer_section_add', array($this,'footer_add_section'));
     add_action( 'after_switch_theme', array($this,'set_default_mod_wpbss'));
+    add_action( 'wpbss-footer-widgets-1', array($this, 'wpbss_footer_widgets_1_callback' ));
+
+
 
 
 		/*###############################
@@ -28,6 +31,24 @@ class footer_section_3_class {
 			'after_title' => '</h3>',
 		));
   }
+
+
+  /**
+   * Add Footer Menu
+   */
+  function wpbss_footer_widgets_1_callback(){
+  ?>
+      <nav id="footer-navigation" class="main-navigation" role="navigation">
+          <?php
+             if(has_nav_menu("footer")) {
+                 wp_nav_menu( array( 'theme_location' => 'footer', 'menu_id' => 'footer-menu' ) );
+             }
+          ?>
+      </nav>
+  <?php
+
+  }
+
 
   //Запускаем установку параметров темы по умолчанию при активации темы
   function set_default_mod_wpbss() {

@@ -131,11 +131,6 @@ add_action( 'wp_enqueue_scripts', 'wpbss_scripts' );
 
 
 
- /**
-  * Implement the Custom Header feature.
-  */
- require get_template_directory() . '/inc/header/custom-header.php';
- require get_template_directory() . '/inc/header/menu-fullwidth.php';
 
  /**
   * Custom template tags for this theme.
@@ -165,12 +160,6 @@ add_action( 'wp_enqueue_scripts', 'wpbss_scripts' );
  require get_template_directory() . '/inc/wp-bootstrap-navwalker/wp_bootstrap_navwalker.php';
 
  /**
-  * Load other files.
-  */
- require get_template_directory() . '/inc/header/register_sidebar.php';
-
-
- /**
   * Support IE
   */
  require get_template_directory() . '/inc/ie-support.php';
@@ -180,3 +169,9 @@ add_action( 'wp_enqueue_scripts', 'wpbss_scripts' );
   * Customize comments
   */
  require get_template_directory() . '/inc/comments-wpbss.php';
+
+ /**
+  * Load other files.
+  */
+ require get_template_directory() . '/inc/header/index.php';
+ require get_template_directory() . '/inc/footer/index.php';

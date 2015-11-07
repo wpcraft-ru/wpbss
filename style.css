@@ -10,7 +10,7 @@ Text Domain: wpbss
 Tags: light, white, gray, one-column, two-columns, right-sidebar, fluid-layout, responsive-layout, responsive-layout, translation-ready, custom-colors, custom-menu, featured-images, full-width-template, post-formats, theme-options, threaded-comments
 GitHub Theme URI: https://github.com/systemo-biz/wpbss2/
 GitHub Branch: master
-Version: 20151107-2
+Version: 20151107-3
 */
 
 
@@ -914,7 +914,6 @@ Margin for header and content
 }
 
 #site-navigation .navbar {
-  border-radius: 0px;
   border-width: 0px;
 }
 

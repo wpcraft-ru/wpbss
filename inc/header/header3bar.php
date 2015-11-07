@@ -35,4 +35,22 @@ function header_add_tmpl_3widgets(){
 
 	get_template_part( 'inc/template-parts/header', '3widgets' );
 
-} add_action( 'header_add_section', 'header_add_tmpl_3widgets' );
+} add_action( 'header_add_section', 'header_add_tmpl_3widgets', $priority = 20 );
+
+
+
+
+/**
+ * Add block for header if no widgets 1
+ */
+function wpbss_header_widgets_1_callback(){
+    if ( get_theme_mod('logo')) : ?>
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+            <img src="<?php echo get_theme_mod('logo'); ?>"  class="img-responsive" alt="" />
+        </a>
+    <?php else: // End header image check. ?>
+       <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+       <strong class="site-description"><?php bloginfo( 'description' ); ?></strong>
+    <?php endif; // End header image check.
+}
+add_action( 'wpbss-header-widgets-1', 'wpbss_header_widgets_1_callback' );
