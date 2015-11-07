@@ -32,7 +32,10 @@ get_header();
 
 			<?php endwhile; ?>
 
-			<?php the_posts_navigation(); ?>
+			<?php the_posts_pagination(array(
+				'mid_size'	=> 3,
+				//'type'			=> 'list',
+			)); ?>
 
 		<?php else : ?>
 
