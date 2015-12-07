@@ -1,6 +1,6 @@
 
 <div id="site-navigation">
-    <nav class="navbar navbar-default" role="navigation">
+    <nav class="navbar navbar-static-top primary-menu" role="navigation">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-main-menu">
@@ -10,13 +10,12 @@
                     <span class="icon-bar"></span>
                 </button>
             </div>
-
             <?php
                 wp_nav_menu( array(
                     'theme_location'    => 'primary',
                     'depth'             => 2,
                     'container'         => 'div',
-                    'container_class'   => 'collapse navbar-collapse navbar-collapse-main-menu navbar-static-top',
+                    'container_class'   => 'collapse navbar-collapse navbar-collapse-main-menu',
                     'menu_class'        => 'nav navbar-nav',
                     'echo'            => true,
                     'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',

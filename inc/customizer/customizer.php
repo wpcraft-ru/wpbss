@@ -204,16 +204,16 @@ function customizer_css_wpbss() {
            Default color elements and text color for element
            */
           .btn-default,
-           .navbar-default,
+           #site-navigation .navbar,
            #site-navigation .dropdown-menu
            {
                background-color: <?php echo  get_theme_mod( 'default_color' ) ?>;
                color: <?php echo  get_theme_mod( 'default_color_text' ) ?>;
             }
 
-           #site-navigation .navbar-default .navbar-nav>.open>a,
-           #site-navigation .navbar-default .navbar-nav>.open>a:hover,
-          #site-navigation .navbar-default .navbar-nav>.open>a:focus
+           #site-navigation .navbar .navbar-nav>.open>a,
+           #site-navigation .navbar .navbar-nav>.open>a:hover,
+          #site-navigation .navbar .navbar-nav>.open>a:focus
            {
                 background-color: <?php echo  get_theme_mod( 'default_color' ) ?>;
                 color: <?php echo  get_theme_mod( 'default_color_text' ) ?>;
@@ -226,11 +226,11 @@ function customizer_css_wpbss() {
                color: <?php echo  get_theme_mod( 'default_color_text' ) ?>;
             }
 
-            #site-navigation .navbar-default .navbar-toggle .icon-bar {
+            #site-navigation .navbar .navbar-toggle .icon-bar {
                 background-color: <?php echo  get_theme_mod( 'default_color_text' ) ?>;
             }
 
-            #site-navigation .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+            #site-navigation .navbar .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
                 background-color: <?php echo  get_theme_mod( 'default_color' ) ?>;
             }
 

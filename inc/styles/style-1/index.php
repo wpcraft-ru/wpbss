@@ -35,7 +35,6 @@ class wpbss_style_1 {
       $this->setting_enable_key,
       array(
           'default' => false,
-          //'type'    => 'option',
           'capability' => 'edit_theme_options',
     ));
     $wp_customize->add_control(
@@ -54,11 +53,10 @@ class wpbss_style_1 {
   //Load style and script
   function load_ss() {
     //Если опция включена, то загрузить стиль
-    //var_dump(get_theme_mod( $setting_enable_key ));
-    if(get_option( $setting_enable_key )){
+    if(get_theme_mod($this->setting_enable_key )){
       wp_enqueue_style( 'wpbbss-style-1', get_template_directory_uri() . '/inc/styles/style-1/style.css' );
     }
-    wp_enqueue_style( 'wpbbss-style-1', get_template_directory_uri() . '/inc/styles/style-1/style.css' );
+    //wp_enqueue_style( 'wpbbss-style-1', get_template_directory_uri() . '/inc/styles/style-1/style.css' );
   }
 
 
