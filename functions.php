@@ -181,3 +181,8 @@ add_action( 'wp_enqueue_scripts', 'wpbss_scripts' );
 Add Breadcrumbs NavXT support
 */
 require get_template_directory() . '/inc/breadcrumbs/navxt/index.php';
+
+/*
+Add Seo Yoast Breadcrumbs
+*/
+require get_template_directory() . '/inc/breadcrumbs/seo-yoast/index.php';
