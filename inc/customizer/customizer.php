@@ -195,7 +195,16 @@ function customizer_css_wpbss() {
 
 
 
-           .btn-default:hover, .btn-default:focus, .btn-default.focus, .btn-default:active, .btn-default.active, .open>.dropdown-toggle.btn-default {
+           .btn-default:hover,
+           .btn-default:focus,
+           .btn-default.focus,
+           .btn-default:active,
+           .btn-default.active,
+           .open>.dropdown-toggle.btn-default
+           #site-navigation .nav>li>a:hover,
+           #site-navigation .nav>li>a:focus
+
+           {
               background-color: <?php echo  get_theme_mod( 'default_color_on_hover' ) ?>;
               color: <?php echo  get_theme_mod( 'default_color_text' ) ?>;
             }
@@ -213,11 +222,12 @@ function customizer_css_wpbss() {
 
            #site-navigation .navbar .navbar-nav>.open>a,
            #site-navigation .navbar .navbar-nav>.open>a:hover,
-          #site-navigation .navbar .navbar-nav>.open>a:focus
+           #site-navigation .navbar .navbar-nav>.open>a:focus,
            {
                 background-color: <?php echo  get_theme_mod( 'default_color' ) ?>;
                 color: <?php echo  get_theme_mod( 'default_color_text' ) ?>;
            }
+
 
            /*
            Header and main menu
@@ -230,7 +240,8 @@ function customizer_css_wpbss() {
                 background-color: <?php echo  get_theme_mod( 'default_color_text' ) ?>;
             }
 
-            #site-navigation .navbar .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+            #site-navigation .navbar .navbar-toggle:hover,
+            #site-navigation .navbar .navbar-toggle:focus {
                 background-color: <?php echo  get_theme_mod( 'default_color' ) ?>;
             }
 
