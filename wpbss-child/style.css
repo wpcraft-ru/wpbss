@@ -1,7 +1,9 @@
 /*
 Theme Name:     WPBSS-Child
 Template:       wpbss
-Version:        20150931
+Version:        20151211
 */
 
-@import url("../wpbss/style.css");
+/* change in function on wp_enqueue_scripts
+* @import url("../wpbss/style.css");
+*/
