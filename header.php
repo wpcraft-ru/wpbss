@@ -24,5 +24,4 @@
 
     <?php do_action( 'header_add_section'); ?>
 
-    <div id="content" class="site-content container">
-        <div class="row">
+    <div id="content" class="site-content">
