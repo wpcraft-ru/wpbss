@@ -11,13 +11,16 @@ Template Name: WooCommerce Store
  */
 
 get_header(); ?>
-
-	<div id="primary" class="content-area col-md-8 pull-right">
-		<main id="main" class="site-main" role="main">
-
-            <?php woocommerce_content(); ?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
-<?php get_sidebar(); ?>
+<div class="container">
+	<div class="row">
+		<div id="primary" class="content-area col-md-8 pull-right">
+			<main id="main" class="site-main" role="main">
+	
+	            <?php woocommerce_content(); ?>
+	
+			</main><!-- #main -->
+		</div><!-- #primary -->
+		<?php get_sidebar(); ?>
+	</div><!-- .row -->
+</div><!-- .container -->
 <?php get_footer(); ?>
