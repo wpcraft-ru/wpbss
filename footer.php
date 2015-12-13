@@ -7,12 +7,11 @@
  * @package wpbss
  */
 ?>
-        </div><!-- .row -->
-	</div><!-- #content .container -->
+	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 
-    <?php do_action( 'footer_section_add'); ?>
+    		<?php do_action( 'footer_section_add'); ?>
 
 	</footer><!-- #colophon -->
 </div><!-- #page -->
