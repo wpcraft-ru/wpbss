@@ -4,6 +4,6 @@ Template:       wpbss
 Version:        20151211
 */
 
-/* change in function on wp_enqueue_scripts
+/* change in function on wp_enqueue_scripts (https://kovshenin.com/2014/child-themes-import/)
 * @import url("../wpbss/style.css");
 */
