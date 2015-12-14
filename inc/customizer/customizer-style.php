@@ -209,8 +209,9 @@ function customizer_first_color($wp_customize){
 
         .btn-default,
         {
-            border-color: <?php echo $this->first_color_bg_hover ?>;
+            border-color: <?php echo $this->first_color_bg ?>;
         }
+        
 
         #site-navigation .navbar .navbar-nav>.open>a:hover,
         #site-navigation .navbar .navbar-nav>.open>a:focus,
