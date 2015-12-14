@@ -85,7 +85,7 @@ class wpbss_style_customizer {
                 $key . '_control',
                 array(
                     'section'  => $this->section_key,
-                    'label'    => 'Основной цвет ссылки',
+                    'label'    => 'Основной цвет ссылки при наведении',
                     'settings' => $key
                 )
             )
@@ -200,10 +200,16 @@ function customizer_first_color($wp_customize){
         #site-navigation .navbar,
         #site-navigation .dropdown-menu,
         #site-navigation .navbar .navbar-nav>.open>a,
+        #site-navigation .nav>li>a:focus,
         #site-navigation a
         {
             background-color: <?php echo $this->first_color_bg ?>;
             color: <?php echo $this->first_color ?>;
+        }
+
+        .btn-default,
+        {
+            border-color: <?php echo $this->first_color_bg_hover ?>;
         }
 
         #site-navigation .navbar .navbar-nav>.open>a:hover,
@@ -219,13 +225,13 @@ function customizer_first_color($wp_customize){
         .btn-default.active,
         .open>.dropdown-toggle.btn-default,
         #site-navigation .nav>li>a:hover,
-        #site-navigation .nav>li>a:focus,
         #site-navigation .nav .open>a,
         #site-navigation .nav .open>a:hover,
         #site-navigation .nav .open>a:focus
         {
             background-color: <?php echo $this->first_color_bg_hover ?>;
             border-color: <?php echo $this->first_color_bg_hover ?>;
+            color: <?php echo $this->first_color ?>;
         }
 
         /*
