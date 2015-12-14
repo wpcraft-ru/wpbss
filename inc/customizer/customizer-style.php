@@ -247,7 +247,7 @@ function customizer_first_color($wp_customize){
         }
 
 
-         #site-navigation .navbar-nav a:hover, #site-navigation .navbar-nav .active a {
+         #site-navigation .navbar-nav a:hover, #site-navigation .navbar-nav .active>a {
               background-color: <?php echo  get_theme_mod( 'default_color_on_hover' ) ?>;
          }
         <?php do_action( 'add_style_options' ); ?>
