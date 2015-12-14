@@ -3,6 +3,8 @@
 class wpbss_style_customizer {
 
   private $section_key = 'colors';
+
+
   private $first_color_bg = '#f8f8f8';
   private $first_color_bg_hover = '#e7e7e7'; //первичный цвет фона
   private $first_color = '#000'; //первичный цвет фона
@@ -13,9 +15,9 @@ class wpbss_style_customizer {
   function __construct() {
 
     //определение переменных и модификаторов темы
-    if(get_theme_mod( 'first_color_bg')) $this->first_color_bg = get_theme_mod( 'first_color_bg');
-    if(get_theme_mod( 'first_color_bg_hover')) $this->first_color_bg_hover = get_theme_mod( 'first_color_bg_hover');
-    if(get_theme_mod( 'first_color')) $this->first_color = get_theme_mod( 'first_color');
+    //if(get_theme_mod( 'first_color_bg')) $this->first_color_bg = get_theme_mod( 'first_color_bg');
+    //if(get_theme_mod( 'first_color_bg_hover')) $this->first_color_bg_hover = get_theme_mod( 'first_color_bg_hover');
+    //if(get_theme_mod( 'first_color')) $this->first_color = get_theme_mod( 'first_color');
 
     //определение параметра первичного цвета
     add_action( 'customize_register', array($this, 'customizer_first_color_bg'));
@@ -33,6 +35,17 @@ class wpbss_style_customizer {
 
   }
 
+
+
+  //установка параметров в момент активации темы
+  function wpbss_activation($oldname, $oldtheme=false) {
+      set_theme_mod('first_color_bg', $this->first_color_bg);
+      set_theme_mod('first_color_bg_hover', $this->first_color_bg_hover);
+      set_theme_mod('first_color', $this->first_color);
+      set_theme_mod('link_color', $this->link_color);
+      set_theme_mod('link_color_hover', $this->link_color_hover);
+
+  }
 
 
 
@@ -187,36 +200,36 @@ function customizer_first_color($wp_customize){
 
 
         a {
-            color: <?php echo $this->link_color; ?>;
+            color: <?php echo get_theme_mod( 'link_color' ) ?>;
         }
         a:hover {
-            color: <?php echo $this->link_color_hover; ?>;
+            color: <?php echo get_theme_mod( 'link_color_hover' ) ?>;
         }
 
         /*
         Default color elements and text color for element
         */
-       .btn-default,
+        .btn-default,
         #site-navigation .navbar,
         #site-navigation .dropdown-menu,
         #site-navigation .navbar .navbar-nav>.open>a,
         #site-navigation .nav>li>a:focus,
         #site-navigation a
         {
-            background-color: <?php echo $this->first_color_bg ?>;
-            color: <?php echo $this->first_color ?>;
+            background-color: <?php echo get_theme_mod( 'first_color_bg' ) ?>;
+            color: <?php echo get_theme_mod( 'first_color' ) ?>;
         }
 
-        .btn-default,
+        .btn-default
         {
-            border-color: <?php echo $this->first_color_bg ?>;
+            border-color: <?php echo get_theme_mod( 'first_color_bg' ) ?>;
         }
-        
+
 
         #site-navigation .navbar .navbar-nav>.open>a:hover,
         #site-navigation .navbar .navbar-nav>.open>a:focus,
         {
-            background-color: <?php echo $this->first_color_bg_hover ?>;
+            background-color: <?php echo get_theme_mod( 'first_color_bg_hover' ) ?>;
         }
 
         .btn-default:hover,
@@ -230,26 +243,27 @@ function customizer_first_color($wp_customize){
         #site-navigation .nav .open>a:hover,
         #site-navigation .nav .open>a:focus
         {
-            background-color: <?php echo $this->first_color_bg_hover ?>;
-            border-color: <?php echo $this->first_color_bg_hover ?>;
-            color: <?php echo $this->first_color ?>;
+            background-color: <?php echo get_theme_mod( 'first_color_bg_hover' ) ?>;
+            border-color: <?php echo get_theme_mod( 'first_color_bg_hover' ) ?>;
+            color: <?php echo get_theme_mod( 'first_color' ) ?>;
         }
 
         /*
           Кнопка мобильного меню
         */
         #site-navigation .navbar .navbar-toggle .icon-bar {
-            background-color: <?php echo $this->first_color ?>;
+            background-color: <?php echo get_theme_mod( 'first_color' ) ?>;
         }
 
         #site-navigation .navbar .navbar-toggle:hover,
         #site-navigation .navbar .navbar-toggle:focus {
-            background-color: <?php echo $this->first_color_bg ?>;
+            background-color: <?php echo get_theme_mod( 'first_color_bg_hover' ) ?>;
         }
 
 
-         #site-navigation .navbar-nav a:hover, #site-navigation .navbar-nav .active>a {
-              background-color: <?php echo  get_theme_mod( 'default_color_on_hover' ) ?>;
+         #site-navigation .navbar-nav a:hover,
+         #site-navigation .navbar-nav .active>a {
+              background-color: <?php echo  get_theme_mod( 'first_color_bg_hover' ) ?>;
          }
         <?php do_action( 'add_style_options' ); ?>
       </style>
@@ -257,12 +271,6 @@ function customizer_first_color($wp_customize){
   }
 
 
-  //установка параметров в момент активации темы
-  function wpbss_activation($oldname, $oldtheme=false) {
-      set_theme_mod('first_color_bg', $this->first_color_bg);
-      set_theme_mod('first_color_bg_hover', $this->first_color_bg_hover);
-      set_theme_mod('first_color', $this->first_color);
-  }
 
 
 
