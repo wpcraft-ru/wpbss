@@ -20,6 +20,9 @@
 </head>
 
 <body <?php body_class(); ?>>
+
+<?php do_action( $tag = 'wpbss_start_body' ); ?>
+
 <div id="page" class="hfeed site">
 
     <?php do_action( 'header_add_section'); ?>

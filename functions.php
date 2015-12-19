@@ -186,3 +186,9 @@ require get_template_directory() . '/inc/breadcrumbs/navxt/index.php';
 Add Seo Yoast Breadcrumbs
 */
 require get_template_directory() . '/inc/breadcrumbs/seo-yoast/index.php';
+
+
+/*
+Add support Google Tag Manager
+*/
+include_once get_template_directory() . '/inc/google-tag-manager/gtm.php';
