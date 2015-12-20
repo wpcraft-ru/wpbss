@@ -14,17 +14,11 @@ class wpbss_style_customizer {
 
   function __construct() {
 
-    //определение переменных и модификаторов темы
-    //if(get_theme_mod( 'first_color_bg')) $this->first_color_bg = get_theme_mod( 'first_color_bg');
-    //if(get_theme_mod( 'first_color_bg_hover')) $this->first_color_bg_hover = get_theme_mod( 'first_color_bg_hover');
-    //if(get_theme_mod( 'first_color')) $this->first_color = get_theme_mod( 'first_color');
-
     //определение параметра первичного цвета
     add_action( 'customize_register', array($this, 'customizer_first_color_bg'));
     add_action( 'customize_register', array($this, 'customizer_first_color_bg_hover'));
     add_action( 'customize_register', array($this, 'customizer_first_color'));
 
-    add_action( 'customize_register', array($this, 'customizer_link_color'));
     add_action( 'customize_register', array($this, 'customizer_link_color_hover'));
 
     //печать стилей
