@@ -6,10 +6,10 @@ function wpbss_bootstrap_comments($comment, $args, $depth) {
 	<li <?php comment_class(); ?>>
         <article id="comment-<?php comment_ID(); ?>" class="clearfix">
           <div class="row">
-            <div class="avatar col-xs-1">
+            <div class="avatar col-xs-1 col-sm-2">
                 <?php echo get_avatar( $comment, $size='75' ); ?>
             </div>
-            <div class="col-xs-11">
+            <div class="col-xs-11 col-sm-10">
               <div class="comment-data panel panel-default">
                 <div class="panel-heading">
                   <div class="comment-meta">
