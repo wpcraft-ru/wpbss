@@ -770,6 +770,9 @@ a:active {
     list-style: none;
 }
 
+.comment-list li {
+list-style: none;
+}
 .comment-content a {
 	word-wrap: break-word;
 }
