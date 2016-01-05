@@ -9,28 +9,37 @@ class footer_section_3_class {
     add_action( 'wpbss-footer-widgets-1', array($this, 'wpbss_footer_widgets_1_callback' ));
 
 
+    add_action( 'widgets_init', array($this, 'wpbss_register_sidebar'), 20 );
 
 
-		/*###############################
-		Sidebars for section
-		*/
-		register_sidebar(array(
-			'name' => __('Footer S3P1'),
-			'id' => 'footer-s3-p1',
-			'before_widget' => '',
-			'after_widget' => '',
-			'before_title' => '<h3>',
-			'after_title' => '</h3>',
-		));
-		register_sidebar(array(
-			'name' => __('Footer S3P2'),
-			'id' => 'footer-s3-p2',
-			'before_widget' => '',
-			'after_widget' => '',
-			'before_title' => '<h3>',
-			'after_title' => '</h3>',
-		));
   }
+
+
+
+  /*###############################
+  Sidebars for footer section 3
+  */
+  function wpbss_register_sidebar(){
+
+    		register_sidebar(array(
+    			'name' => __('Footer S3P1'),
+    			'id' => 'footer-s3-p1',
+    			'before_widget' => '',
+    			'after_widget' => '',
+    			'before_title' => '<h3>',
+    			'after_title' => '</h3>',
+    		));
+    		register_sidebar(array(
+    			'name' => __('Footer S3P2'),
+    			'id' => 'footer-s3-p2',
+    			'before_widget' => '',
+    			'after_widget' => '',
+    			'before_title' => '<h3>',
+    			'after_title' => '</h3>',
+    		));
+
+  }
+
 
 
   /**

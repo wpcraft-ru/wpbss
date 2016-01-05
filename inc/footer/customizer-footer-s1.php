@@ -5,6 +5,17 @@ class footer_section_1_class {
     add_action( 'customize_register', array($this, 'wpbss_customizer'));
     add_action( 'footer_section_add', array($this,'footer_add_section_1'));
     add_action( 'add_style_options', array($this, 'wpbss_print_style'));
+    add_action( 'widgets_init', array($this, 'wpbss_register_sidebar'), 20 );
+
+
+  }
+
+
+
+  /*###############################
+  Sidebars register
+  */
+  function wpbss_register_sidebar(){
 
     register_sidebar(array(
     	'name' => __('Footer S1'),
@@ -14,7 +25,9 @@ class footer_section_1_class {
     	'before_title' => '<h3>',
     	'after_title' => '</h3>',
     ));
+
   }
+
 
 
   //Add CSS option on customizer

@@ -1,20 +1,40 @@
 <?php
+/*
+
+Footer section #2
+
+*/
+
 
 class footer_section_2_class {
   function __construct() {
     add_action( 'customize_register', array($this, 'wpbss_customizer'));
     add_action( 'footer_section_add', array($this,'footer_add_section'));
     add_action( 'add_style_options', array($this, 'wpbss_print_style'));
+    add_action( 'widgets_init', array($this, 'wpbss_register_sidebar'), 20 );
+
+
+  }
+
+
+
+  /*###############################
+  Sidebars register
+  */
+  function wpbss_register_sidebar(){
 
     register_sidebar(array(
-    	'name' => __('Footer S2'),
-    	'id' => 'footer-s2',
-    	'before_widget' => '',
-    	'after_widget' => '',
-    	'before_title' => '<h3>',
-    	'after_title' => '</h3>',
+      'name' => __('Footer S2'),
+      'id' => 'footer-s2',
+      'before_widget' => '',
+      'after_widget' => '',
+      'before_title' => '<h3>',
+      'after_title' => '</h3>',
     ));
+
   }
+
+
 
 
   //Add CSS option on customizer
