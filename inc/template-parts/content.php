@@ -9,10 +9,12 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-	        <a href="<?php the_permalink() ?>">
-	        	<?php the_post_thumbnail( 'large', array( 'class' => 'img-responsive' )); ?>
-	        </a>
 		<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
+		<?php if( has_post_thumbnail() ): ?>
+		        <a href="<?php the_permalink() ?>">
+		        	<?php the_post_thumbnail( 'large', array( 'class' => 'img-responsive' )); ?>
+		        </a>
+	        <?php endif; ?>
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
