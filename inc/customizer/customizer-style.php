@@ -5,13 +5,6 @@ class wpbss_style_customizer {
   private $section_key = 'colors';
 
 
-  private $first_color_bg = '#f8f8f8';
-  private $first_color_bg_hover = '#e7e7e7'; //первичный цвет фона
-  private $first_color = '#000'; //первичный цвет фона
-  private $link_color = '#337ab7';
-  private $link_color_hover = '#23527c';
-
-
   function __construct() {
 
     //определение параметра первичного цвета
@@ -31,13 +24,23 @@ class wpbss_style_customizer {
 
 
 
-  //установка параметров в момент активации темы
+  //установка параметров в момент активации темы, если они пустые 
   function wpbss_activation($oldname, $oldtheme=false) {
-      set_theme_mod('first_color_bg', $this->first_color_bg);
-      set_theme_mod('first_color_bg_hover', $this->first_color_bg_hover);
-      set_theme_mod('first_color', $this->first_color);
-      set_theme_mod('link_color', $this->link_color);
-      set_theme_mod('link_color_hover', $this->link_color_hover);
+
+    if(! get_theme_mod('first_color_bg'))
+      set_theme_mod('first_color_bg', '#f8f8f8');
+
+    if(! get_theme_mod('first_color_bg_hover'))
+      set_theme_mod('first_color_bg_hover', '#e7e7e7');
+
+    if(! get_theme_mod('first_color'))
+      set_theme_mod('first_color', '#000');
+
+    if(! get_theme_mod('link_color'))
+      set_theme_mod('link_color', '#337ab7');
+
+    if(! get_theme_mod('link_color_hover'))
+      set_theme_mod('link_color_hover', '#23527c');
 
   }
 
