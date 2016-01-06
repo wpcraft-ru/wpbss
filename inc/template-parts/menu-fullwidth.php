@@ -18,7 +18,7 @@
                     'container_class'   => 'collapse navbar-collapse navbar-collapse-main-menu',
                     'menu_class'        => 'nav navbar-nav',
                     'echo'            => true,
-                    'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+                    'fallback_cb'       => 'wpbss_main_menu_fallback',
                     'walker'            => new wp_bootstrap_navwalker())
                 );
             ?>
