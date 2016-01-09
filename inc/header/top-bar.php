@@ -80,7 +80,7 @@ class header_top_bar_wpbss {
               $this->setting_bg_color . '_control',
               array(
                   'section'  => $this->section_key,
-                  'label'    => 'Основной цвет элементов',
+                  'label'    => 'Основной цвет',
                   'settings' => $this->setting_bg_color
               )
           )

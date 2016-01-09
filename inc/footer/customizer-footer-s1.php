@@ -78,7 +78,7 @@ class footer_section_1_class {
               'footer_section_1_bg_color_control',
               array(
                   'section'  => 'footer_section_1',
-                  'label'    => 'Основной цвет элементов',
+                  'label'    => 'Основной цвет',
                   'settings'     => 'footer_section_1_bg_color'
               )
           )

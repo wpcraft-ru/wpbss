@@ -116,7 +116,7 @@ class footer_section_3_class {
               'footer_section_3_bg_color_control',
               array(
                   'section'  => 'footer_section_3',
-                  'label'    => 'Основной цвет элементов',
+                  'label'    => 'Основной цвет',
                   'settings'     => 'footer_section_3_bg_color'
               )
           )
